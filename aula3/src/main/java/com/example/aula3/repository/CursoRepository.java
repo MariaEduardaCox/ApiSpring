@@ -17,21 +17,21 @@ public class CursoRepository {
     private EntityManager entityManager;
 
     @Transactional
-    public Curso inserir(Curso curso){
+    public Curso inserir(Curso curso) {
         entityManager.merge(curso);
         return curso;
     }
-    
-    public List<Curso> obterPorNome(String nome){
+
+    public List<Curso> obterTodos() {
+        return entityManager.createQuery("from Curso",
+                Curso.class).getResultList();
+    }
+
+    public List<Curso> obterPorNome(String nome) {
         String jpql = " select c from Curso c where c.nome like :nome";
         TypedQuery<Curso> query = entityManager.createQuery(jpql, Curso.class);
         query.setParameter("nome", "%" + nome + "%");
         return query.getResultList();
-}
-
-    public List<Curso> obterTodos(){
-       return entityManager.createQuery("from Curso",
-              Curso.class).getResultList();
     }
-    
+
 }
