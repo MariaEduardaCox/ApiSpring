@@ -11,7 +11,7 @@ public class CategoriaCurso {
     private int id;
     @Column(nullable = false)
     private String nome;
-    @OneToMany(mappedBy = "categoriaCurso")
+    @OneToMany(mappedBy = "categoriaCurso", fetch = )
     private List<Curso> cursos;
 
     public CategoriaCurso() {
