@@ -1,6 +1,6 @@
 🎯**Api Spring JPA**
 
-Projeto destinado a evolução das aulas de arquitetura web.
+Projeto destinado a evolução das aulas de arquitetura web, desenvolvendo uma api com spring com conexão JPA seguindo os padrões de repository, controllers, models...
 
 💻**Construção**
 
